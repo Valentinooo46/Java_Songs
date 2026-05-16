@@ -1,0 +1,26 @@
+# server:
+#   port: 8081
+
+# upload:
+#   dir: D:/Project1/mp3Song   # краще абсолютний шлях
+
+# spring:
+#   application:
+#     name: Project1
+
+#   datasource:
+#     url: jdbc:postgresql://ep-super-salad-aepkhglh-pooler.c-2.us-east-2.aws.neon.tech/neondb?user=neondb_owner&password=npg_hk9M4PXbDBar&sslmode=require&channelBinding=require
+
+#   jpa:
+#     show-sql: true
+#     hibernate:
+#       ddl-auto: update
+#       naming:
+#         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+#     properties:
+#       hibernate:
+#         dialect: org.hibernate.dialect.PostgreSQLDialect
+#         connection:
+#           CharSet: UTF-8
+#           characterEncoding: UTF-8
+#           useUnicode: true

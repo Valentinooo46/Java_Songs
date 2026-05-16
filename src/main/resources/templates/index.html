@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="uk"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <h1 class="text-3xl font-bold mb-4 text-gray-900 text-center">
+        Список жанрів.
+    </h1>
+    <div th:if="${#lists.isEmpty(genres)}">
+        <p class="text-gray-500">Жанри відсутні</p>
+    </div>
+    <ul class="list-disc pl-6" th:if="${!#lists.isEmpty(genres)}">
+        <li th:each="genre : ${genres}" class="mb-2">
+            <span class="font-bold" th:text="${genre.name}"></span>
+            <p class="text-gray-600" th:text="${genre.description}"></p>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
