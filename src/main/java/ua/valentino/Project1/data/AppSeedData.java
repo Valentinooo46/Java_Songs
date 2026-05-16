@@ -6,8 +6,10 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import net.datafaker.Faker;
 import ua.valentino.Project1.entities.Genre;
+import ua.valentino.Project1.entities.RoleEntity;
 import ua.valentino.Project1.entities.Song;
 import ua.valentino.Project1.repositories.IGenreRepository;
+import ua.valentino.Project1.repositories.IRoleRepository;
 import ua.valentino.Project1.repositories.ISongRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -25,16 +27,27 @@ public class AppSeedData {
     // final - теж саме, що readonly у С#
     private final IGenreRepository genreRepository;
     private final ISongRepository songRepository;
+    private final IRoleRepository roleRepository;
     private final Faker faker = new Faker(new Locale("uk"));
 
     @PostConstruct
     public void seed() {
         System.out.println("---------Run seed data-----------");
+        seedRoles();
         seedGenres();
         try {
             seedSongs();
         } catch (IOException e) {
             System.out.println("Error reead files");
+        }
+    }
+
+    private void seedRoles() {
+        if (roleRepository.count() == 0) {
+            RoleEntity userRole = new RoleEntity();
+            userRole.setName("User");
+            roleRepository.save(userRole);
+            System.out.println("✓ Role 'User' created");
         }
     }
 

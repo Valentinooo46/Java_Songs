@@ -1,26 +1,21 @@
 package ua.valentino.Project1.dtos.account;
 
-import org.springframework.web.multipart.MultipartFile;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
 public class RegisterDto {
-    @NotBlank
+    @NotBlank(message = "Username не може бути порожнім")
     private String username;
 
-    @Email
-    @NotBlank
+    @Email(message = "Email невалідний")
+    @NotBlank(message = "Email не може бути порожнім")
     private String email;
 
-    @NotBlank
+    @NotBlank(message = "Пароль не може бути порожнім")
     private String password;
 
-    @NotBlank
+    @NotBlank(message = "Підтвердження пароля не може бути порожнім")
     private String confirmPassword;
-
-    @NotBlank
-    private MultipartFile image;
 }
