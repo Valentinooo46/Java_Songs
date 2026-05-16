@@ -1,0 +1,48 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+*.iml
+*.iws
+*.ipr
+
+# Build
+build/
+.gradle/
+*.jar
+*.war
+*.ear
+target/
+bin/
+
+# Maven
+.m2/
+
+# Node (if used)
+node_modules/
+npm-debug.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Documentation
+README.md
+HELP.md
+docs/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Tests (optional - remove if you want to run tests in Docker)
+src/test/
